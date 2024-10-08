@@ -25,7 +25,13 @@ address = Address(street, city, state, zip_code)
 # Find the closest Domino's store
 store = address.closest_store()
 
-# Print the store information
-print(f'Closest store ID: {store.store_id}')
-print(f'Store address: {store.address}')
-print(f'Store phone number: {store.phone}')
+# Print the store ID
+print(f'Closest store ID: {store.id}')
+
+# Access and print the store's address
+store_address = store.data['Address']
+print(f"Store address: {store_address['Street']}, {store_address['City']}, {store_address['Region']} {store_address['PostalCode']}")
+
+# Access and print the store's phone number
+print(f'Store phone number: {store.data["Phone"]}')
+
